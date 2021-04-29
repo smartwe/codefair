@@ -7,7 +7,27 @@
     <link rel="shortcut icon" href="favicon.ico" />
   </head>
   <body>
-    <P>만나서 반갑습니다.</p>
-    HAPPY TRAVLER를 담당하는 해트입니다
+    <script>
+        window.onload = function () {
+        var h = document.getElementById('hideBtn');
+        var op = document.getElementById('openBtn');
+        var pp = document.getElementById("message");
+        
+        
+        
+        h.onclick = function () {    //숨기는 버튼 클릭했을 때
+            pp.style.display = 'none';
+        }
+ 
+        op.onclick = function () {  //보이기 버튼 클릭했을 때
+            pp.style.display = 'block';
+            pp.style.color = 'red';
+            pp.style.fontSize = '20pt';
+        }
+    }
+    </script>
+    <hr>
+    <P id = 'message'>만나서 반갑습니다.HAPPY TRAVLER를 담당하는 해트입니다</p>
+    <button id = 'hideBtn'>다음 페이지</button>
   </body>
 </html>
