@@ -1,16 +1,22 @@
 const { app, BrowserWindow } = require('electron');
 
-function createWindow () {  // 브라우저 창을 생성
+function createWindow () { 
   let win = new BrowserWindow({
     width: 800,
     height: 600,
+    darkTheme: true,
+    transparent: false,
+    frame: true,
+    fullscreen:true,
+    autoHideMenuBar:true,
     webPreferences: {
       nodeIntegration: true
     }
   })
+  
 
-  //브라우저창이 읽어 올 파일 위치
   win.loadFile('./index.html')
+  win.setIgnoreMouseEvents(false)
 }
 
 app.on('ready', createWindow);
