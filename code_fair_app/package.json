@@ -1,12 +1,22 @@
 {
-  "name": "code_fair_app",
+  "name": "code_fair",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "index.js.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron"
+    "start": "electron .",
+    "build:osx": "electron-builder --mac",
+    "build:linux": "npm run build:linux32 && npm run build:linux64",
+    "build:linux32": "electron-builder --linux --ia32",
+    "build:linux64": "electron-builder --linux --x64",
+    "build:win": "npm run build:win32 && npm run build:win64",
+    "build:win32": "electron-builder --win portable --ia32",
+    "build:win64": "electron-builder --win portable --x64"
   },
-  "author": "smartwe",
-  "license": "MIT"
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^7.1.7",
+    "electron-builder": "^21.2.0"
+  },
+  "description": ""
 }
